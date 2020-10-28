@@ -1,5 +1,4 @@
 package com.nzy.leetcode.queue;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -7,7 +6,13 @@ import java.util.Queue;
 public class ImplementStackUsingQueues{
     public static void main(String[] args) {
         MyStack myStack = new ImplementStackUsingQueues().new MyStack();
-
+        Integer arr[]=new Integer[]{1,2,3,4};
+        for (Integer i : arr) {
+            myStack.push(i);
+        }
+        while (!myStack.empty()){
+            System.out.println(myStack.pop());
+        }
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
