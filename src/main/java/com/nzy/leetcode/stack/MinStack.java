@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class MinStack{
     public static void main(String[] args) {
-        MinsStack minStack = new MinStack().new MinsStack();
+        Solution minStack = new MinStack().new Solution();
         minStack.push(-2);
         minStack.push(0);
         minStack.push(-3);
@@ -14,12 +14,12 @@ public class MinStack{
         System.out.println("返回-2 --> "+minStack.getMin());
     }
 //leetcode submit region begin(Prohibit modification and deletion)
-    class MinsStack {
+    class Solution {
         private Stack<Integer> stack;
         private Stack<Integer> minStack;
 
         /** initialize your data structure here. */
-        public MinsStack() {
+        public Solution() {
             stack=new Stack<>();
             minStack=new Stack<>();
         }
