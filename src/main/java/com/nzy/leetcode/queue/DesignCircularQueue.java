@@ -17,6 +17,10 @@ public class DesignCircularQueue {
         circularQueue.Rear();  // 返回 4
     }
     //leetcode submit region begin(Prohibit modification and deletion)
+    /*
+        执行耗时:7 ms,击败了48.02% 的Java用户
+        内存消耗:39.2 MB,击败了78.59% 的Java用户
+     */
     class Solution {
         private int k;//队列大小
         private int head;//队列的头指针
@@ -44,6 +48,7 @@ public class DesignCircularQueue {
         public boolean enQueue(int value) {
             if (isFull())return false;
             queue[tail]=value;
+            count++;
             tail=tail==queue.length-1?0:tail+1;
             return true;
         }
@@ -52,6 +57,7 @@ public class DesignCircularQueue {
         public boolean deQueue() {
             if (isEmpty())return false;
             head=head==queue.length-1?0:head+1;
+            count--;
             return true;
         }
 
@@ -64,17 +70,17 @@ public class DesignCircularQueue {
         /** Get the last item from the queue. */
         public int Rear() {
             if (isEmpty())return -1;
-            return queue[(tail-1+k)%k];
+            return tail==0?queue[queue.length-1]:queue[tail-1];
         }
 
         /** Checks whether the circular queue is empty or not. */
         public boolean isEmpty() {
-            return head==tail;
+            return count==0;
         }
 
         /** Checks whether the circular queue is full or not. */
         public boolean isFull() {
-           return (tail+1)%k==head;
+           return count==queue.length;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
