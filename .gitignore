@@ -36,6 +36,12 @@ gen
 ### IDEA ###
 .idea/*
 *.iml
-*/target/*
+/target/*
 */*.iml
 /.gradle/
+/target/classes/META-INF/Data-Structure.kotlin_module
+/src/main/resources/rebel.xml
+/target/classes/rebel.xml
+src/main/java/com/nzy/datastructure/stack/
+target/generated-sources/
+target/generated-test-sources/
